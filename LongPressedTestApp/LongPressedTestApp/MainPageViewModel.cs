@@ -24,5 +24,10 @@ namespace LongPressedTestApp
         public Command LongPressed { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public MainPageViewModel()
+        {
+            LongPressed = new Command(() => Message = "Long pressed");
+        }
     }
 }

@@ -7,7 +7,7 @@
     <Label Text="{Binding Path=Message}" 
            VerticalOptions="Center" 
            HorizontalOptions="Center"
-           local:LongPressedEffect.Command="{Binding}">
+           local:LongPressedEffect.Command="{Binding Path=LongPressed}">
         <Label.Effects>
             <local:LongPressedEffect />
         </Label.Effects>
