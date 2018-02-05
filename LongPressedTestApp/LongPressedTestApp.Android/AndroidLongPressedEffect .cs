@@ -13,8 +13,6 @@ namespace LongPressedTestApp.Droid
 
         public static void Initialize() { }
 
-        //public AndroidLongPressedEffect() { }
-
         protected override void OnAttached()
         {
             if (!_attached)

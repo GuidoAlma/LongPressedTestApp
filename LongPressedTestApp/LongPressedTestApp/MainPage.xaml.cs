@@ -15,11 +15,6 @@ namespace LongPressedTestApp
 
 			var pageModel = new MainPageViewModel();
 
-			pageModel.Message = "Welcome to Xamarin.Forms!";
-			pageModel.LongPressed = new Command(() => {
-				pageModel.Message = "Long pressed";
-			});
-
 			BindingContext = pageModel;
 		}
 	}

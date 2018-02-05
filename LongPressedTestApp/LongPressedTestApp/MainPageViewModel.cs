@@ -8,26 +8,82 @@ namespace LongPressedTestApp
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
-        private string _message;
-        public string Message
+        private string _labelText;
+        public string LabelText
         {
             get
             {
-                return _message;
+                return _labelText;
             }
             set
             {
-                _message = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Message)));
+                _labelText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LabelText)));
             }
         }
-        public Command LongPressed { get; set; }
+
+        private string _stackText;
+        public string StackText
+        {
+            get
+            {
+                return _stackText;
+            }
+            set
+            {
+                _stackText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StackText)));
+            }
+        }
+
+        private string _entryText;
+        public string EntryText
+        {
+            get
+            {
+                return _entryText;
+            }
+            set
+            {
+                _entryText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(EntryText)));
+            }
+        }
+
+        private string _buttonText;
+        public string ButtonText
+        {
+            get
+            {
+                return _buttonText;
+            }
+            set
+            {
+                _buttonText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ButtonText)));
+            }
+        }
+        public Command LongPressedLabel { get; set; }
+        public Command LongPressedStack { get; set; }
+        public Command LongPressedEntry { get; set; }
+        public Command LongPressedButton { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public MainPageViewModel()
         {
-            LongPressed = new Command(() => Message = "Long pressed");
+            StackText = "Stack Long Press Test";
+            LabelText = "Label Long Press Test";
+            EntryText = "Long press to clear me";
+            ButtonText = "Button test";
+
+            LongPressedLabel = new Command(() => LabelText = "Long pressed");
+
+            LongPressedStack = new Command(() => StackText = "Long pressed");
+
+            LongPressedEntry = new Command(() => EntryText = "");
+
+            LongPressedButton = new Command(() =>ButtonText = "Long pressed");
         }
     }
 }
